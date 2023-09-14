@@ -1,0 +1,5395 @@
+export const artistTokenABI = {
+  abi: [
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "initialSupply",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "nonpayable",
+      type: "constructor",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "spender",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "value",
+          type: "uint256",
+        },
+      ],
+      name: "Approval",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "value",
+          type: "uint256",
+        },
+      ],
+      name: "Transfer",
+      type: "event",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+        {
+          internalType: "address",
+          name: "spender",
+          type: "address",
+        },
+      ],
+      name: "allowance",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "spender",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "amount",
+          type: "uint256",
+        },
+      ],
+      name: "approve",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "account",
+          type: "address",
+        },
+      ],
+      name: "balanceOf",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "decimals",
+      outputs: [
+        {
+          internalType: "uint8",
+          name: "",
+          type: "uint8",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "spender",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "subtractedValue",
+          type: "uint256",
+        },
+      ],
+      name: "decreaseAllowance",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "entertaBlock",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "spender",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "addedValue",
+          type: "uint256",
+        },
+      ],
+      name: "increaseAllowance",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "name",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "_entertaBlock",
+          type: "address",
+        },
+      ],
+      name: "setEntertaBlock",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "symbol",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "totalSupply",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "amount",
+          type: "uint256",
+        },
+      ],
+      name: "transfer",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "amount",
+          type: "uint256",
+        },
+      ],
+      name: "transferFrom",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+  ],
+};
+
+export const entertaABI = {
+  abi: [
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "collaborationId",
+          type: "bytes32",
+        },
+        {
+          internalType: "uint256",
+          name: "amount",
+          type: "uint256",
+        },
+      ],
+      name: "addContribution",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "eventId",
+          type: "bytes32",
+        },
+        {
+          internalType: "uint256",
+          name: "amount",
+          type: "uint256",
+        },
+      ],
+      name: "purchaseTickets",
+      outputs: [],
+      stateMutability: "payable",
+      type: "function",
+    },
+    {
+      inputs: [],
+      stateMutability: "nonpayable",
+      type: "constructor",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          indexed: false,
+          internalType: "address",
+          name: "licensee",
+          type: "address",
+        },
+      ],
+      name: "AgreementApproved",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          indexed: false,
+          internalType: "address",
+          name: "licensee",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "paymentAmount",
+          type: "uint256",
+        },
+      ],
+      name: "AgreementCreated",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "approved",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "Approval",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "operator",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "bool",
+          name: "approved",
+          type: "bool",
+        },
+      ],
+      name: "ApprovalForAll",
+      type: "event",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "approve",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          internalType: "address",
+          name: "licensee",
+          type: "address",
+        },
+      ],
+      name: "approveUsageAgreement",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "artistAddress",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "agreementHash",
+          type: "string",
+        },
+      ],
+      name: "ArtistAgreementSet",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "artistAddress",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "name",
+          type: "string",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "genre",
+          type: "string",
+        },
+      ],
+      name: "ArtistRegistered",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "_fromTokenId",
+          type: "uint256",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "_toTokenId",
+          type: "uint256",
+        },
+      ],
+      name: "BatchMetadataUpdate",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "collaborationId",
+          type: "bytes32",
+        },
+        {
+          indexed: false,
+          internalType: "address[]",
+          name: "collaborators",
+          type: "address[]",
+        },
+      ],
+      name: "CollaborationCreated",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "collaborationId",
+          type: "bytes32",
+        },
+      ],
+      name: "CollaborationFinalized",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: false,
+          internalType: "bytes32",
+          name: "collaborationId",
+          type: "bytes32",
+        },
+        {
+          indexed: false,
+          internalType: "address",
+          name: "collaborator",
+          type: "address",
+        },
+      ],
+      name: "CollaboratorRemoved",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "collaborationId",
+          type: "bytes32",
+        },
+        {
+          indexed: false,
+          internalType: "address",
+          name: "contributor",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "contributionAmount",
+          type: "uint256",
+        },
+      ],
+      name: "ContributionAdded",
+      type: "event",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address[]",
+          name: "collaborators",
+          type: "address[]",
+        },
+      ],
+      name: "createCollaboration",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          internalType: "address",
+          name: "licensee",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "paymentAmount",
+          type: "uint256",
+        },
+      ],
+      name: "createUsageAgreement",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+      ],
+      name: "distributeRoyalties",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "eventId",
+          type: "bytes32",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "totalEarnings",
+          type: "uint256",
+        },
+      ],
+      name: "EventFinalized",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "eventId",
+          type: "bytes32",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "name",
+          type: "string",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "date",
+          type: "uint256",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "ticketPrice",
+          type: "uint256",
+        },
+        {
+          indexed: false,
+          internalType: "address[]",
+          name: "performers",
+          type: "address[]",
+        },
+      ],
+      name: "EventScheduled",
+      type: "event",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "collaborationId",
+          type: "bytes32",
+        },
+      ],
+      name: "finalizeCollaboration",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "eventId",
+          type: "bytes32",
+        },
+      ],
+      name: "finalizeEvent",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "_tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "MetadataUpdate",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: false,
+          internalType: "bytes32",
+          name: "eventId",
+          type: "bytes32",
+        },
+        {
+          indexed: false,
+          internalType: "address",
+          name: "performer",
+          type: "address",
+        },
+      ],
+      name: "PerformerRemoved",
+      type: "event",
+    },
+    {
+      inputs: [],
+      name: "receiveRoyalties",
+      outputs: [],
+      stateMutability: "payable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "emailAddress",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "password",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "firstName",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "lastName",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "stageName",
+          type: "string",
+        },
+      ],
+      name: "registerArtist",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "collaborationId",
+          type: "bytes32",
+        },
+      ],
+      name: "removeCollaborator",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "eventId",
+          type: "bytes32",
+        },
+      ],
+      name: "removePerformer",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "artist",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "amount",
+          type: "uint256",
+        },
+      ],
+      name: "RoyaltiesDistributed",
+      type: "event",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "safeTransferFrom",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+        {
+          internalType: "bytes",
+          name: "data",
+          type: "bytes",
+        },
+      ],
+      name: "safeTransferFrom",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "name",
+          type: "string",
+        },
+        {
+          internalType: "uint256",
+          name: "date",
+          type: "uint256",
+        },
+        {
+          internalType: "uint256",
+          name: "ticketPrice",
+          type: "uint256",
+        },
+        {
+          internalType: "address[]",
+          name: "performers",
+          type: "address[]",
+        },
+      ],
+      name: "scheduleEvent",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "operator",
+          type: "address",
+        },
+        {
+          internalType: "bool",
+          name: "approved",
+          type: "bool",
+        },
+      ],
+      name: "setApprovalForAll",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "agreementHash",
+          type: "string",
+        },
+      ],
+      name: "setArtistAgreement",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "releaseDate",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "description",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "coverArtUrl",
+          type: "string",
+        },
+      ],
+      name: "setWorkMetadata",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          internalType: "uint256",
+          name: "royaltyPercentage",
+          type: "uint256",
+        },
+      ],
+      name: "setWorkRoyalty",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "eventId",
+          type: "bytes32",
+        },
+        {
+          indexed: false,
+          internalType: "address",
+          name: "buyer",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "amount",
+          type: "uint256",
+        },
+      ],
+      name: "TicketsPurchased",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "Transfer",
+      type: "event",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "transferFrom",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "firstName",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "lastName",
+          type: "string",
+        },
+      ],
+      name: "updateArtist",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "releaseDate",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "description",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "coverArtUrl",
+          type: "string",
+        },
+      ],
+      name: "updateWorkMetadata",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "withdrawBalance",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "artist",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+      ],
+      name: "WorkMetadataUpdated",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "artistAddress",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+      ],
+      name: "WorkRegistered",
+      type: "event",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      name: "artistAgreements",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      name: "artists",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "isRegistered",
+          type: "bool",
+        },
+        {
+          internalType: "string",
+          name: "emailAddress",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "password",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "firstName",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "lastName",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "stageName",
+          type: "string",
+        },
+        {
+          internalType: "uint256",
+          name: "totalRoyalties",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "artistToken",
+      outputs: [
+        {
+          internalType: "contract ArtistToken",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      name: "artistWorks",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+      ],
+      name: "balanceOf",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      name: "balances",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      name: "collaborationIds",
+      outputs: [
+        {
+          internalType: "bytes32",
+          name: "",
+          type: "bytes32",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "",
+          type: "bytes32",
+        },
+      ],
+      name: "collaborations",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "totalContributions",
+          type: "uint256",
+        },
+        {
+          internalType: "uint256",
+          name: "totalRoyalties",
+          type: "uint256",
+        },
+        {
+          internalType: "bool",
+          name: "isFinalized",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "",
+          type: "bytes32",
+        },
+      ],
+      name: "events",
+      outputs: [
+        {
+          internalType: "string",
+          name: "name",
+          type: "string",
+        },
+        {
+          internalType: "uint256",
+          name: "date",
+          type: "uint256",
+        },
+        {
+          internalType: "uint256",
+          name: "ticketPrice",
+          type: "uint256",
+        },
+        {
+          internalType: "uint256",
+          name: "totalEarnings",
+          type: "uint256",
+        },
+        {
+          internalType: "bool",
+          name: "isFinalized",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "getApproved",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "artist",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "index",
+          type: "uint256",
+        },
+      ],
+      name: "getArtistWorkAtIndex",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "artist",
+          type: "address",
+        },
+      ],
+      name: "getArtistWorksCount",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "collaborationId",
+          type: "bytes32",
+        },
+      ],
+      name: "getCollaborationDetails",
+      outputs: [
+        {
+          internalType: "address[]",
+          name: "collaborators",
+          type: "address[]",
+        },
+        {
+          internalType: "uint256",
+          name: "totalContributions",
+          type: "uint256",
+        },
+        {
+          internalType: "uint256",
+          name: "totalRoyalties",
+          type: "uint256",
+        },
+        {
+          internalType: "bool",
+          name: "isFinalized",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "collaborationId",
+          type: "bytes32",
+        },
+        {
+          internalType: "address",
+          name: "collaborator",
+          type: "address",
+        },
+      ],
+      name: "getContribution",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "eventId",
+          type: "bytes32",
+        },
+      ],
+      name: "getEventDetails",
+      outputs: [
+        {
+          internalType: "string",
+          name: "name",
+          type: "string",
+        },
+        {
+          internalType: "uint256",
+          name: "date",
+          type: "uint256",
+        },
+        {
+          internalType: "uint256",
+          name: "ticketPrice",
+          type: "uint256",
+        },
+        {
+          internalType: "uint256",
+          name: "totalEarnings",
+          type: "uint256",
+        },
+        {
+          internalType: "bool",
+          name: "isFinalized",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "index",
+          type: "uint256",
+        },
+      ],
+      name: "getRegisteredArtistAtIndex",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "getRegisteredArtistsCount",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          internalType: "address",
+          name: "licensee",
+          type: "address",
+        },
+      ],
+      name: "getUsageAgreement",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+      ],
+      name: "getUsageAgreementCount",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          internalType: "uint256",
+          name: "index",
+          type: "uint256",
+        },
+      ],
+      name: "getUsageAgreementDetails",
+      outputs: [
+        {
+          internalType: "address",
+          name: "licensee",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "paymentAmount",
+          type: "uint256",
+        },
+        {
+          internalType: "bool",
+          name: "isApproved",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "artist",
+          type: "address",
+        },
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+      ],
+      name: "getWorkMetadata",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+        {
+          internalType: "string",
+          name: "releaseDate",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "description",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "coverArtUrl",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "artist",
+          type: "address",
+        },
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+      ],
+      name: "getWorkTokenId",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "getWorkTokenUri",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+        {
+          internalType: "address",
+          name: "operator",
+          type: "address",
+        },
+      ],
+      name: "isApprovedForAll",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "name",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "ownerOf",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      name: "registeredArtists",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes4",
+          name: "interfaceId",
+          type: "bytes4",
+        },
+      ],
+      name: "supportsInterface",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "symbol",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "tokenURI",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "password",
+          type: "string",
+        },
+      ],
+      name: "verifyArtistPassword",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      name: "workMetadata",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+        {
+          internalType: "string",
+          name: "releaseDate",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "description",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "coverArtUrl",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      name: "workRoyalties",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      name: "workUsageAgreements",
+      outputs: [
+        {
+          internalType: "address",
+          name: "licensee",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "paymentAmount",
+          type: "uint256",
+        },
+        {
+          internalType: "bool",
+          name: "isApproved",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+  ],
+};
+
+export const artistManagement = {
+  abi: [
+    {
+      inputs: [],
+      stateMutability: "nonpayable",
+      type: "constructor",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "approved",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "Approval",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "operator",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "bool",
+          name: "approved",
+          type: "bool",
+        },
+      ],
+      name: "ApprovalForAll",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "artistAddress",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "agreementHash",
+          type: "string",
+        },
+      ],
+      name: "ArtistAgreementSet",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "_fromTokenId",
+          type: "uint256",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "_toTokenId",
+          type: "uint256",
+        },
+      ],
+      name: "BatchMetadataUpdate",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "_tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "MetadataUpdate",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "artist",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "amount",
+          type: "uint256",
+        },
+      ],
+      name: "RoyaltiesDistributed",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "Transfer",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "artist",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+      ],
+      name: "WorkMetadataUpdated",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "artistAddress",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+      ],
+      name: "WorkRegistered",
+      type: "event",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "approve",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "artistToken",
+      outputs: [
+        {
+          internalType: "contract ArtistToken",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      name: "artistWorks",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      name: "artists",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "isRegistered",
+          type: "bool",
+        },
+        {
+          internalType: "string",
+          name: "emailAddress",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "password",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "firstName",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "lastName",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "stageName",
+          type: "string",
+        },
+        {
+          internalType: "uint256",
+          name: "totalRoyalties",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+      ],
+      name: "balanceOf",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      name: "balances",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "initialSupply",
+          type: "uint256",
+        },
+      ],
+      name: "createArtistToken",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+      ],
+      name: "distributeRoyalties",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "getApproved",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "artist",
+          type: "address",
+        },
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+      ],
+      name: "getWorkMetadata",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+        {
+          internalType: "string",
+          name: "releaseDate",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "description",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "coverArtUrl",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "artist",
+          type: "address",
+        },
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+      ],
+      name: "getWorkTokenId",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "getWorkTokenUri",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+        {
+          internalType: "address",
+          name: "operator",
+          type: "address",
+        },
+      ],
+      name: "isApprovedForAll",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "name",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "ownerOf",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "receiveRoyalties",
+      outputs: [],
+      stateMutability: "payable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "emailAddress",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "password",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "firstName",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "lastName",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "stageName",
+          type: "string",
+        },
+      ],
+      name: "registerArtist",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "tokenUri",
+          type: "string",
+        },
+      ],
+      name: "registerWork",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      name: "registeredArtists",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "safeTransferFrom",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+        {
+          internalType: "bytes",
+          name: "data",
+          type: "bytes",
+        },
+      ],
+      name: "safeTransferFrom",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "operator",
+          type: "address",
+        },
+        {
+          internalType: "bool",
+          name: "approved",
+          type: "bool",
+        },
+      ],
+      name: "setApprovalForAll",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "releaseDate",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "description",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "coverArtUrl",
+          type: "string",
+        },
+      ],
+      name: "setWorkMetadata",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          internalType: "uint256",
+          name: "royaltyPercentage",
+          type: "uint256",
+        },
+      ],
+      name: "setWorkRoyalty",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes4",
+          name: "interfaceId",
+          type: "bytes4",
+        },
+      ],
+      name: "supportsInterface",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "symbol",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "tokenURI",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "transferFrom",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "firstName",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "lastName",
+          type: "string",
+        },
+      ],
+      name: "updateArtist",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "releaseDate",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "description",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "coverArtUrl",
+          type: "string",
+        },
+      ],
+      name: "updateWorkMetadata",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "password",
+          type: "string",
+        },
+      ],
+      name: "verifyArtistPassword",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      name: "workMetadata",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+        {
+          internalType: "string",
+          name: "releaseDate",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "description",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "coverArtUrl",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      name: "workRoyalties",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+  ],
+};
+
+export const newABI = {
+  abi: [
+    {
+      inputs: [],
+      stateMutability: "nonpayable",
+      type: "constructor",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          indexed: false,
+          internalType: "address",
+          name: "licensee",
+          type: "address",
+        },
+      ],
+      name: "AgreementApproved",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          indexed: false,
+          internalType: "address",
+          name: "licensee",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "paymentAmount",
+          type: "uint256",
+        },
+      ],
+      name: "AgreementCreated",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "approved",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "Approval",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "operator",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "bool",
+          name: "approved",
+          type: "bool",
+        },
+      ],
+      name: "ApprovalForAll",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "artistAddress",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "agreementHash",
+          type: "string",
+        },
+      ],
+      name: "ArtistAgreementSet",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "artist",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "firstName",
+          type: "string",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "stageName",
+          type: "string",
+        },
+      ],
+      name: "ArtistRegistered",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "_fromTokenId",
+          type: "uint256",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "_toTokenId",
+          type: "uint256",
+        },
+      ],
+      name: "BatchMetadataUpdate",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "collaborationId",
+          type: "bytes32",
+        },
+        {
+          indexed: false,
+          internalType: "address[]",
+          name: "collaborators",
+          type: "address[]",
+        },
+      ],
+      name: "CollaborationCreated",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "collaborationId",
+          type: "bytes32",
+        },
+      ],
+      name: "CollaborationFinalized",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: false,
+          internalType: "bytes32",
+          name: "collaborationId",
+          type: "bytes32",
+        },
+        {
+          indexed: false,
+          internalType: "address",
+          name: "collaborator",
+          type: "address",
+        },
+      ],
+      name: "CollaboratorRemoved",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "collaborationId",
+          type: "bytes32",
+        },
+        {
+          indexed: false,
+          internalType: "address",
+          name: "contributor",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "contributionAmount",
+          type: "uint256",
+        },
+      ],
+      name: "ContributionAdded",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "eventId",
+          type: "bytes32",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "totalEarnings",
+          type: "uint256",
+        },
+      ],
+      name: "EventFinalized",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "eventId",
+          type: "bytes32",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "name",
+          type: "string",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "date",
+          type: "uint256",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "ticketPrice",
+          type: "uint256",
+        },
+        {
+          indexed: false,
+          internalType: "address[]",
+          name: "performers",
+          type: "address[]",
+        },
+      ],
+      name: "EventScheduled",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "_tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "MetadataUpdate",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: false,
+          internalType: "bytes32",
+          name: "eventId",
+          type: "bytes32",
+        },
+        {
+          indexed: false,
+          internalType: "address",
+          name: "performer",
+          type: "address",
+        },
+      ],
+      name: "PerformerRemoved",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "artist",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "amount",
+          type: "uint256",
+        },
+      ],
+      name: "RoyaltiesDistributed",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "eventId",
+          type: "bytes32",
+        },
+        {
+          indexed: false,
+          internalType: "address",
+          name: "buyer",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "amount",
+          type: "uint256",
+        },
+      ],
+      name: "TicketsPurchased",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "Transfer",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "artist",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+      ],
+      name: "WorkMetadataUpdated",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "artistAddress",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+      ],
+      name: "WorkRegistered",
+      type: "event",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "approve",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      name: "artistAgreements",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "artistToken",
+      outputs: [
+        {
+          internalType: "contract ArtistToken",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      name: "artistWorks",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      name: "artists",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "isRegistered",
+          type: "bool",
+        },
+        {
+          internalType: "string",
+          name: "emailAddress",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "password",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "firstName",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "lastName",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "stageName",
+          type: "string",
+        },
+        {
+          internalType: "uint256",
+          name: "totalRoyalties",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+      ],
+      name: "balanceOf",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      name: "balances",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      name: "collaborationIds",
+      outputs: [
+        {
+          internalType: "bytes32",
+          name: "",
+          type: "bytes32",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "",
+          type: "bytes32",
+        },
+      ],
+      name: "collaborations",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "totalContributions",
+          type: "uint256",
+        },
+        {
+          internalType: "uint256",
+          name: "totalRoyalties",
+          type: "uint256",
+        },
+        {
+          internalType: "bool",
+          name: "isFinalized",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "initialSupply",
+          type: "uint256",
+        },
+      ],
+      name: "createArtistToken",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          internalType: "address",
+          name: "licensee",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "paymentAmount",
+          type: "uint256",
+        },
+      ],
+      name: "createUsageAgreement",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+      ],
+      name: "distributeRoyalties",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "",
+          type: "bytes32",
+        },
+      ],
+      name: "events",
+      outputs: [
+        {
+          internalType: "string",
+          name: "name",
+          type: "string",
+        },
+        {
+          internalType: "uint256",
+          name: "date",
+          type: "uint256",
+        },
+        {
+          internalType: "uint256",
+          name: "ticketPrice",
+          type: "uint256",
+        },
+        {
+          internalType: "uint256",
+          name: "totalEarnings",
+          type: "uint256",
+        },
+        {
+          internalType: "bool",
+          name: "isFinalized",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "getApproved",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "artist",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "index",
+          type: "uint256",
+        },
+      ],
+      name: "getArtistWorkAtIndex",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "artist",
+          type: "address",
+        },
+      ],
+      name: "getArtistWorksCount",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "index",
+          type: "uint256",
+        },
+      ],
+      name: "getRegisteredArtistAtIndex",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "getRegisteredArtistsCount",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "artist",
+          type: "address",
+        },
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+      ],
+      name: "getWorkMetadata",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+        {
+          internalType: "string",
+          name: "releaseDate",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "description",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "coverArtUrl",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "artist",
+          type: "address",
+        },
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+      ],
+      name: "getWorkTokenId",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "getWorkTokenUri",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+        {
+          internalType: "address",
+          name: "operator",
+          type: "address",
+        },
+      ],
+      name: "isApprovedForAll",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "name",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "ownerOf",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "receiveRoyalties",
+      outputs: [],
+      stateMutability: "payable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "emailAddress",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "password",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "firstName",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "lastName",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "stageName",
+          type: "string",
+        },
+      ],
+      name: "registerArtist",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "tokenUri",
+          type: "string",
+        },
+      ],
+      name: "registerWork",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      name: "registeredArtists",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "safeTransferFrom",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+        {
+          internalType: "bytes",
+          name: "data",
+          type: "bytes",
+        },
+      ],
+      name: "safeTransferFrom",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "operator",
+          type: "address",
+        },
+        {
+          internalType: "bool",
+          name: "approved",
+          type: "bool",
+        },
+      ],
+      name: "setApprovalForAll",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "releaseDate",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "description",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "coverArtUrl",
+          type: "string",
+        },
+      ],
+      name: "setWorkMetadata",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          internalType: "uint256",
+          name: "royaltyPercentage",
+          type: "uint256",
+        },
+      ],
+      name: "setWorkRoyalty",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes4",
+          name: "interfaceId",
+          type: "bytes4",
+        },
+      ],
+      name: "supportsInterface",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "symbol",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "tokenURI",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "transferFrom",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "firstName",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "lastName",
+          type: "string",
+        },
+      ],
+      name: "updateArtist",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "releaseDate",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "description",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "coverArtUrl",
+          type: "string",
+        },
+      ],
+      name: "updateWorkMetadata",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "password",
+          type: "string",
+        },
+      ],
+      name: "verifyArtistPassword",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      name: "workMetadata",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+        {
+          internalType: "string",
+          name: "releaseDate",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "description",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "coverArtUrl",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      name: "workRoyalties",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      name: "workUsageAgreements",
+      outputs: [
+        {
+          internalType: "address",
+          name: "licensee",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "paymentAmount",
+          type: "uint256",
+        },
+        {
+          internalType: "bool",
+          name: "isApproved",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+  ],
+};
+
+export const backupABI = {
+  abi: [
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "collaborationId",
+          type: "bytes32",
+        },
+        {
+          internalType: "uint256",
+          name: "amount",
+          type: "uint256",
+        },
+      ],
+      name: "addContribution",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [],
+      stateMutability: "nonpayable",
+      type: "constructor",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "approved",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "Approval",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "operator",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "bool",
+          name: "approved",
+          type: "bool",
+        },
+      ],
+      name: "ApprovalForAll",
+      type: "event",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "approve",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "artistAddress",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "agreementHash",
+          type: "string",
+        },
+      ],
+      name: "ArtistAgreementSet",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "artistAddress",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "name",
+          type: "string",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "stageName",
+          type: "string",
+        },
+      ],
+      name: "ArtistRegistered",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "collaborationId",
+          type: "bytes32",
+        },
+        {
+          indexed: false,
+          internalType: "address[]",
+          name: "collaborators",
+          type: "address[]",
+        },
+      ],
+      name: "CollaborationCreated",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "collaborationId",
+          type: "bytes32",
+        },
+      ],
+      name: "CollaborationFinalized",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "collaborationId",
+          type: "bytes32",
+        },
+        {
+          indexed: false,
+          internalType: "address",
+          name: "contributor",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "contributionAmount",
+          type: "uint256",
+        },
+      ],
+      name: "ContributionAdded",
+      type: "event",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "collaborationId",
+          type: "bytes32",
+        },
+        {
+          internalType: "address[]",
+          name: "collaborators",
+          type: "address[]",
+        },
+      ],
+      name: "createCollaboration",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "eventId",
+          type: "bytes32",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "totalEarnings",
+          type: "uint256",
+        },
+      ],
+      name: "EventFinalized",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "eventId",
+          type: "bytes32",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "name",
+          type: "string",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "date",
+          type: "uint256",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "ticketPrice",
+          type: "uint256",
+        },
+        {
+          indexed: false,
+          internalType: "address[]",
+          name: "performers",
+          type: "address[]",
+        },
+      ],
+      name: "EventScheduled",
+      type: "event",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "releaseDate",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "description",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "coverArtUrl",
+          type: "string",
+        },
+      ],
+      name: "mintNFT",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "previousOwner",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "newOwner",
+          type: "address",
+        },
+      ],
+      name: "OwnershipTransferred",
+      type: "event",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "emailAddress",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "firstName",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "lastName",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "stageName",
+          type: "string",
+        },
+      ],
+      name: "registerArtist",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "renounceOwnership",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "safeTransferFrom",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+        {
+          internalType: "bytes",
+          name: "data",
+          type: "bytes",
+        },
+      ],
+      name: "safeTransferFrom",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "operator",
+          type: "address",
+        },
+        {
+          internalType: "bool",
+          name: "approved",
+          type: "bool",
+        },
+      ],
+      name: "setApprovalForAll",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "eventId",
+          type: "bytes32",
+        },
+        {
+          internalType: "uint256",
+          name: "royaltyPercentage",
+          type: "uint256",
+        },
+      ],
+      name: "setEventRoyalty",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "releaseDate",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "description",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "coverArtUrl",
+          type: "string",
+        },
+      ],
+      name: "setWorkMetadata",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "bytes32",
+          name: "eventId",
+          type: "bytes32",
+        },
+        {
+          indexed: false,
+          internalType: "address",
+          name: "buyer",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "amount",
+          type: "uint256",
+        },
+      ],
+      name: "TicketsPurchased",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "Transfer",
+      type: "event",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "transferFrom",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "newOwner",
+          type: "address",
+        },
+      ],
+      name: "transferOwnership",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "string",
+          name: "name",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "stageName",
+          type: "string",
+        },
+      ],
+      name: "updateArtist",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "artistAddress",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "string",
+          name: "work",
+          type: "string",
+        },
+      ],
+      name: "WorkRegistered",
+      type: "event",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      name: "artistAgreements",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+        {
+          internalType: "bytes32",
+          name: "",
+          type: "bytes32",
+        },
+      ],
+      name: "artistCollaborations",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "totalContributions",
+          type: "uint256",
+        },
+        {
+          internalType: "uint256",
+          name: "totalRoyalties",
+          type: "uint256",
+        },
+        {
+          internalType: "bool",
+          name: "isFinalized",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      name: "artists",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "isRegistered",
+          type: "bool",
+        },
+        {
+          internalType: "string",
+          name: "emailAddress",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "firstName",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "lastName",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "stageName",
+          type: "string",
+        },
+        {
+          internalType: "uint256",
+          name: "totalRoyalties",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      name: "artistWorks",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+      ],
+      name: "balanceOf",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      name: "balances",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      name: "collaborationIds",
+      outputs: [
+        {
+          internalType: "bytes32",
+          name: "",
+          type: "bytes32",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "",
+          type: "bytes32",
+        },
+      ],
+      name: "collaborations",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "totalContributions",
+          type: "uint256",
+        },
+        {
+          internalType: "uint256",
+          name: "totalRoyalties",
+          type: "uint256",
+        },
+        {
+          internalType: "bool",
+          name: "isFinalized",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "",
+          type: "bytes32",
+        },
+      ],
+      name: "eventRoyalties",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes32",
+          name: "",
+          type: "bytes32",
+        },
+      ],
+      name: "events",
+      outputs: [
+        {
+          internalType: "string",
+          name: "name",
+          type: "string",
+        },
+        {
+          internalType: "uint256",
+          name: "date",
+          type: "uint256",
+        },
+        {
+          internalType: "uint256",
+          name: "ticketPrice",
+          type: "uint256",
+        },
+        {
+          internalType: "uint256",
+          name: "totalEarnings",
+          type: "uint256",
+        },
+        {
+          internalType: "bool",
+          name: "isFinalized",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "getApproved",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+        {
+          internalType: "address",
+          name: "operator",
+          type: "address",
+        },
+      ],
+      name: "isApprovedForAll",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "name",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "owner",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "ownerOf",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      name: "registeredArtists",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "bytes4",
+          name: "interfaceId",
+          type: "bytes4",
+        },
+      ],
+      name: "supportsInterface",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "symbol",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "tokenURI",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      name: "workMetadata",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+        {
+          internalType: "string",
+          name: "releaseDate",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "description",
+          type: "string",
+        },
+        {
+          internalType: "string",
+          name: "coverArtUrl",
+          type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+  ],
+};
+
+export const entertaContract = "0xd27E98e350d655C7177750D8025cdBD8FEF87691";
+export const artistTokenContract = "0x52962603feC1CD5141E8B91E079D716ebC1B84a5";
+export const artistManagementContract =
+  "0xa95144fc9871FDf9494507f9038956fB62955De1";
+export const artistManagement1Contract =
+  "0xFbB7eF430EF8062AB0ce07a3056bA103763D6A1a";
+
+export const newContract = "0xA02a47d41EC5c6430e1Ff1E9e27bAb105909CbAa";
+
+export const backupContract = "0xef0Eb448eC075d945ccA56176969A18B321A4Ed6";
