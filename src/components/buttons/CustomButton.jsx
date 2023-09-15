@@ -21,7 +21,7 @@ export const CustomButton = ({
         isDisabled
           ? `${
               buttonVariant === "primary" &&
-              `bg-${primaryColor} text-[#E0B8C4] cursor-not-allowed py-3`
+              `bg-gray-600 text-[#fff] cursor-not-allowed py-3`
             } ${
               buttonVariant === "secondary" &&
               `border-[1.5px] border-black bg-opacity-50 text-[${secondaryColor}] cursor-not-allowed py-3`

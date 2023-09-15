@@ -9,6 +9,7 @@ import { useFormik } from "formik/dist";
 import { coverLetterValidationSchema } from "../../utils/validationSchema/coverletter.validations";
 import useOpenApiRequest from "../../utils/hooks/useOpenApiRequest";
 import parse from "html-react-parser";
+import { copyToClipboard } from "../../utils/libs";
 
 const Landing = () => {
   const { handleCoverLetterRequest, apiResponse, loading } =
@@ -50,7 +51,15 @@ const Landing = () => {
 
   console.log(apiResponse);
 
-  const { handleChange, handleBlur, errors, values, handleSubmit } = formik;
+  const {
+    handleChange,
+    handleBlur,
+    errors,
+    values,
+    handleSubmit,
+    dirty,
+    isValid,
+  } = formik;
 
   useEffect(() => {
     // disconnectMetaMask();
@@ -151,6 +160,7 @@ const Landing = () => {
                   <CustomButton
                     handleClick={handleSubmit}
                     labelText="Generate"
+                    isDisabled={!(dirty && isValid)}
                   />
                   <CustomButton labelText="Cancel" buttonVariant="secondary" />
                 </div>
@@ -158,8 +168,19 @@ const Landing = () => {
 
               <div className="col-span-2">
                 <div className="w-full p-5 h-[71vh] overflow-scroll border-2 border-black border-dashed rounded-3xl">
-                  {/* {parse(apiResponse?.toString())} */}
-                  <pre style={{ whiteSpace: 'pre-wrap' }}>{parse(apiResponse?.toString())}</pre>
+                  {apiResponse !== "" && (
+                    <div className="flex justify-end">
+                      <CustomButton
+                        containerVariant="px-3 rounded-full flex justify-center"
+                        labelText="Copy"
+                        buttonVariant="secondary"
+                        handleClick={() => copyToClipboard(apiResponse)}
+                      />
+                    </div>
+                  )}
+                  <pre style={{ whiteSpace: "pre-wrap" }}>
+                    {parse(apiResponse?.toString())}
+                  </pre>
                 </div>
               </div>
             </div>
