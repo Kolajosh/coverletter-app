@@ -1,6 +1,7 @@
 import React from "react";
 import { useSnackbar } from "notistack";
 
+
 // eslint-disable-next-line react/prop-types
 const InnerSnackbarUtilsConfigurator = ({ setUseSnackbarRef }) => {
   setUseSnackbarRef(useSnackbar());

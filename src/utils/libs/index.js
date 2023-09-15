@@ -1,4 +1,4 @@
-import notification from "./notification";
+import { ToastNotify } from "../../components/reusables/helpers/ToastNotify";
 
 /**
  * Fallback for older browsers for copy to clipboard
@@ -30,7 +30,11 @@ export const fallbackCopyTextToClipboard = (text) => {
 export const copyToClipboard = (text, event) => {
   const link = text || event?.getAttribute("data-clipboard-text");
 
-  notification.success("Copied");
+  ToastNotify({
+    type: "success",
+    message: "Copied",
+    position: "top-right",
+  });
 
   if (!navigator.clipboard) {
     fallbackCopyTextToClipboard(link);

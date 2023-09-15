@@ -10,6 +10,7 @@ import { coverLetterValidationSchema } from "../../utils/validationSchema/coverl
 import useOpenApiRequest from "../../utils/hooks/useOpenApiRequest";
 import parse from "html-react-parser";
 import { copyToClipboard } from "../../utils/libs";
+import PageLoader from "../../components/PageLoader";
 
 const Landing = () => {
   const { handleCoverLetterRequest, apiResponse, loading } =
@@ -49,8 +50,6 @@ const Landing = () => {
     validationSchema: coverLetterValidationSchema,
   });
 
-  console.log(apiResponse);
-
   const {
     handleChange,
     handleBlur,
@@ -68,6 +67,7 @@ const Landing = () => {
 
   return (
     <>
+      {loading && <PageLoader message="Generating" />}
       <div className="relative bg-black text-black font-jarkata w-full h-screen">
         <img src={Hero} className="w-full h-screen object-cover" alt="gero" />
         <div className="absolute mt-10 ml-10 md:ml-20 top-0">
