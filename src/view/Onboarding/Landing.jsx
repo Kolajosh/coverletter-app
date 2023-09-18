@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Hero from "../../assets/img/bgbgbg.jpg";
-import { ReactComponent as Logo } from "../../assets/svg/Logo.svg";
+import { ReactComponent as Logo } from "../../assets/svg/logos.svg";
 import { CustomButton } from "../../components/buttons/CustomButton";
 import CenterModal from "../../components/Modal/CenterModal";
 import { TextInput } from "../../components/reusables/TextInput";
@@ -69,9 +69,12 @@ const Landing = () => {
     <>
       {loading && <PageLoader message="Generating" />}
       <div className="relative bg-black text-black font-jarkata w-full h-screen">
-        <img src={Hero} className="w-full h-screen object-cover" alt="gero" />
+        <img src={Hero} className="w-full h-screen object-cover" alt="hero" />
         <div className="absolute mt-10 ml-10 md:ml-20 top-0">
-          <div>{/* <Logo /> */}</div>
+          <div className="flex gap-2 items-center">
+            <Logo style={{ width: "50px", height: "50px" }}/>
+            <span className="font-semibold text-xl font-poppins">CoverJobs</span>
+          </div>
           <div className="mt-40 text-2xl md:text-6xl font-bold">
             Get your COVER LETTER <br />
             in seconds.
@@ -85,6 +88,10 @@ const Landing = () => {
             />
           </div>
         </div>
+
+        <div className="absolute bottom-0 left-0 w-full text-center pb-5">
+          <p className="text-black text-sm">Developed by Kolawole Ayoola</p>
+        </div>
       </div>
 
       {/* simple modal for cover letter request */}
@@ -97,7 +104,7 @@ const Landing = () => {
             buttonVariant="primary"
           >
             <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
-              <div className="w-full col-span-1 space-y-6">
+              <div className="w-full col-span-1 space-y-4">
                 <div>
                   <TextInput
                     label="Full Name"
