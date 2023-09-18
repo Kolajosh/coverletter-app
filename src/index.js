@@ -1,5 +1,5 @@
 import React from "react";
-// import "dotenv/config";
+import { Analytics } from '@vercel/analytics/react';
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
@@ -11,6 +11,7 @@ root.render(
   <React.StrictMode>
     <ToastContainer />
     <App />
+    <Analytics />
   </React.StrictMode>
 );
 
