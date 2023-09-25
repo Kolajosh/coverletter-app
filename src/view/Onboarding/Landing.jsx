@@ -11,12 +11,36 @@ import useOpenApiRequest from "../../utils/hooks/useOpenApiRequest";
 import parse from "html-react-parser";
 import { copyToClipboard } from "../../utils/libs";
 import PageLoader from "../../components/PageLoader";
+import { supabase } from "../../supabase";
 
 const Landing = () => {
   const { handleCoverLetterRequest, apiResponse, loading } =
     useOpenApiRequest();
 
   const [openModal, setOpenModal] = useState(false);
+  const [openLoginModal, setOpenLoginModal] = useState(false);
+
+  //login with google
+  const googleLogin = async () => {
+    let { data, error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+    });
+    console.log(data);
+    console.log(error);
+  };
+
+  const fetchUser = async () => {
+    try {
+      const response = await supabase.auth.getUser();
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
 
   const formik = useFormik({
     initialValues: {
@@ -71,9 +95,19 @@ const Landing = () => {
       <div className="relative bg-black text-black font-jarkata w-full h-screen">
         <img src={Hero} className="w-full h-screen object-cover" alt="hero" />
         <div className="absolute mt-10 ml-10 md:ml-20 top-0">
-          <div className="flex gap-2 items-center">
-            <Logo style={{ width: "50px", height: "50px" }}/>
-            <span className="font-semibold text-xl font-poppins">CoverJobs</span>
+          <div className="flex justify-between items-center">
+            <div className="flex items-center gap-2">
+              <Logo style={{ width: "50px", height: "50px" }} />
+              <span className="font-semibold text-xl font-poppins">
+                CoverJobs
+              </span>
+            </div>
+            <div>
+              <CustomButton
+                handleClick={() => setOpenLoginModal(true)}
+                labelText="Login"
+              />
+            </div>
           </div>
           <div className="mt-40 text-2xl md:text-6xl font-bold">
             Get your COVER LETTER <br />
@@ -90,7 +124,9 @@ const Landing = () => {
         </div>
 
         <div className="absolute bottom-0 left-0 w-full text-center pb-5">
-          <p className="text-black text-sm">Developed by Kolawole Ayoola</p>
+          <p className="text-black text-lg">
+            Developed by <span className="underline"><a href="https://kolawole.vercel.app">Kolawole Ayoola</a></span>
+          </p>
         </div>
       </div>
 
@@ -169,7 +205,11 @@ const Landing = () => {
                     labelText="Generate"
                     isDisabled={!(dirty && isValid)}
                   />
-                  <CustomButton labelText="Cancel" buttonVariant="secondary" />
+                  <CustomButton
+                    labelText="Cancel"
+                    buttonVariant="secondary"
+                    isDisabled={() => setOpenModal(false)}
+                  />
                 </div>
               </div>
 
@@ -194,6 +234,17 @@ const Landing = () => {
           </CenterModal>
         </div>
       )}
+
+      {/* <div className="w-full mx-10 md:mx-20 ">
+        <CenterModal
+          title="Login"
+          handleClose={() => setOpenLoginModal(false)}
+          background={Hero}
+          buttonVariant="primary"
+        >
+          <div onClick={() => googleLogin()}>Login with Google</div>
+        </CenterModal>
+      </div> */}
     </>
   );
 };
