@@ -34,7 +34,11 @@ const useOpenApiRequest = () => {
       setApiResponse(response?.data?.choices[0]?.message?.content);
       setLoading(false);
     } catch (error) {
-      console.log(error);
+      ToastNotify({
+        type: "error",
+        message: "Server Down, Try again later",
+        position: "top-right",
+      });
       setLoading(false);
     }
   };
