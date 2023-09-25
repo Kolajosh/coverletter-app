@@ -72,8 +72,10 @@ const Landing = () => {
         <img src={Hero} className="w-full h-screen object-cover" alt="hero" />
         <div className="absolute mt-10 ml-10 md:ml-20 top-0">
           <div className="flex gap-2 items-center">
-            <Logo style={{ width: "50px", height: "50px" }}/>
-            <span className="font-semibold text-xl font-poppins">CoverJobs</span>
+            <Logo style={{ width: "50px", height: "50px" }} />
+            <span className="font-semibold text-xl font-poppins">
+              CoverJobs
+            </span>
           </div>
           <div className="mt-40 text-2xl md:text-6xl font-bold">
             Get your COVER LETTER <br />
@@ -90,7 +92,18 @@ const Landing = () => {
         </div>
 
         <div className="absolute bottom-0 left-0 w-full text-center pb-5">
-          <p className="text-black text-sm">Developed by Kolawole Ayoola</p>
+          <p className="text-black text-lg">
+            Developed by{" "}
+            <span className="underline">
+              <a
+                href="https://kolawolejosh.vercel.app"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Kolawole Ayoola
+              </a>
+            </span>
+          </p>
         </div>
       </div>
 
