@@ -118,6 +118,11 @@ const Landing = () => {
           >
             <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
               <div className="w-full col-span-1 space-y-4">
+                {apiResponse !== "" && (
+                  <span className="md:hidden block text-xs text-red-500">
+                    Scroll down to view cover letter
+                  </span>
+                )}
                 <div>
                   <TextInput
                     label="Full Name"
@@ -182,7 +187,11 @@ const Landing = () => {
                     labelText="Generate"
                     isDisabled={!(dirty && isValid)}
                   />
-                  <CustomButton labelText="Cancel" buttonVariant="secondary" />
+                  <CustomButton
+                    labelText="Cancel"
+                    buttonVariant="secondary"
+                    handleClick={() => setOpenModal(false)}
+                  />
                 </div>
               </div>
 
