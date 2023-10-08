@@ -11,6 +11,7 @@ import useOpenApiRequest from "../../utils/hooks/useOpenApiRequest";
 import parse from "html-react-parser";
 import { copyToClipboard } from "../../utils/libs";
 import PageLoader from "../../components/PageLoader";
+import { Helmet } from "react-helmet-async";
 
 const Landing = () => {
   const { handleCoverLetterRequest, apiResponse, loading } =
@@ -67,6 +68,14 @@ const Landing = () => {
 
   return (
     <>
+      <Helmet>
+        <title>CoverJobs</title>
+        <meta
+          name="description"
+          content="Generate your cover letter for any job role in seconds. Simple, safe and secure"
+        />
+        <link rel="canonical" href="https://coverjobs.vercel.app/" />
+      </Helmet>
       {loading && <PageLoader message="Generating" />}
       <div className="relative bg-black text-black font-jarkata w-full h-screen">
         <img src={Hero} className="w-full h-screen object-cover" alt="hero" />
