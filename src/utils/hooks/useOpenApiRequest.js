@@ -20,7 +20,7 @@ const useOpenApiRequest = () => {
       const response = await axios.post(
         "https://api.nova-oss.com/v1/chat/completions",
         {
-          model: "gpt-3.5-turbo-instruct",
+          model: "gpt-3.5-turbo-16k",
           messages: [
             { role: "system", content: payload },
             { role: "user", content: "prompt" },
