@@ -86,7 +86,7 @@ const Landing = () => {
               CoverJobs
             </span>
           </div>
-          <div className="mt-40 text-2xl md:text-6xl font-bold">
+          <div className="mt-20 text-2xl md:text-6xl font-bold">
             Get your COVER LETTER <br />
             in seconds.
           </div>
