@@ -1,14 +1,12 @@
+import React, { useState } from "react";
 import axios from "axios";
 import { OpenAI } from "openai";
-import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid"; // Import the uuid library
 import { ToastNotify } from "../../components/reusables/helpers/ToastNotify";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const useOpenApiRequest = () => {
-  const openai = new OpenAI({
-    baseURL: "https://api.nova-oss.com/v1/",
-    apiKey: process.env.REACT_APP_NOVA_AI,
-    dangerouslyAllowBrowser: true,
-  });
+  const genAI = new GoogleGenerativeAI(process.env.REACT_APP_BARD_AI);
 
   const [prompt, setPrompt] = useState("");
   const [apiResponse, setApiResponse] = useState("");
@@ -16,23 +14,14 @@ const useOpenApiRequest = () => {
 
   const handleCoverLetterRequest = async (payload) => {
     setLoading(true);
+    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const prompt = payload;
+
     try {
-      const response = await axios.post(
-        "https://api.nova-oss.com/v1/chat/completions",
-        {
-          model: "gpt-4-0613",
-          messages: [
-            { role: "system", content: payload },
-            { role: "user", content: "prompt" },
-          ],
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${process.env.REACT_APP_NOVA_AI}`,
-          },
-        }
-      );
-      setApiResponse(response?.data?.choices[0]?.message?.content);
+      const result = await model.generateContent(prompt);
+      const response = await result?.response;
+      const text = response?.text()
+      setApiResponse(text);
       setLoading(false);
     } catch (error) {
       ToastNotify({

@@ -62,7 +62,6 @@ const Landing = () => {
   } = formik;
 
   useEffect(() => {
-    // disconnectMetaMask();
     localStorage.clear();
   }, []);
 
