@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Hero from "../../assets/img/bgbgbg.jpg";
+import Hero from "../../assets/img/bg1.jpg";
 import { ReactComponent as Logo } from "../../assets/svg/logos.svg";
 import { CustomButton } from "../../components/buttons/CustomButton";
 import CenterModal from "../../components/Modal/CenterModal";
@@ -42,7 +42,7 @@ const Landing = () => {
         values?.skills !== "" && `These are the skills i have ${values?.skills}`
       }
 
-      PS: Make it to be atleast two paragraph long
+      PS: Make it to be at least two paragraph long, and make it sound  as human as possible
       `;
 
       await handleCoverLetterRequest(payload);
@@ -78,19 +78,19 @@ const Landing = () => {
       {loading && <PageLoader message="Generating" />}
       <div className="relative bg-black text-black font-jarkata w-full h-screen">
         <img src={Hero} className="w-full h-screen object-cover" alt="hero" />
-        <div className="absolute mt-10 ml-10 md:ml-20 top-0">
+        <div className="absolute w-full mt-10 px-10 text-center top-0">
           <div className="flex gap-2 items-center">
-            <Logo style={{ width: "50px", height: "50px" }} />
-            <span className="font-semibold text-xl font-poppins">
+            <Logo style={{ width: "30px", height: "30px" }} />
+            <span className="font-semibold text-md font-poppins">
               CoverJobs
             </span>
           </div>
-          <div className="mt-20 text-2xl md:text-6xl font-bold">
-            Get your COVER LETTER <br />
+          <div className="mt-20 text-3xl md:text-7xl font-bold">
+            Get your Cover Letters <br />
             in seconds.
           </div>
           <div className="mt-10 font-semibold">Simple, Safe, Secure 😉.</div>
-          <div className="mt-5">
+          <div className="mt-5 flex justify-center">
             <CustomButton
               handleClick={() => setOpenModal(true)}
               labelText="Get Started"
@@ -111,6 +111,9 @@ const Landing = () => {
                 Kolawole Ayoola
               </a>
             </span>
+          </p>
+          <p className="text-black text-lg">
+            ~ Building things that matter ~
           </p>
         </div>
       </div>
