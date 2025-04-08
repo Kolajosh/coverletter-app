@@ -1,7 +1,23 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ReactComponent as CaretDownIcon } from "../../assets/svg/chevron-down.svg";
 
-function SelectField({
+interface Option {
+  label: string;
+  value: string | number;
+}
+
+interface SelectFieldProps {
+  label: string;
+  options: Option[];
+  name: string;
+  placeholder?: string;
+  isDisabled?: boolean;
+  setStatus: (option: Option | null) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  selectedItem?: Option | null;
+}
+
+const SelectField: React.FC<SelectFieldProps> = ({
   label,
   options,
   name,
@@ -10,36 +26,35 @@ function SelectField({
   setStatus,
   onChange = () => {},
   selectedItem = null,
-}) {
+}) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(
-    selectedItem !== null ? selectedItem : null
+  const [selectedOption, setSelectedOption] = useState<Option | null>(
+    selectedItem || null
   );
-  const fieldRef = useRef(null);
+  const fieldRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setSelectedOption(selectedItem);
   }, [selectedItem]);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: MouseEvent) => {
       if (
         fieldRef.current &&
-        !fieldRef.current.contains(event.target) &&
-        !event.target.classList.contains("select-field-option")
+        !fieldRef.current.contains(event.target as Node) &&
+        !(event.target as HTMLElement).classList.contains("select-field-option")
       ) {
         setIsOpen(false);
       }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
-  const handleOptionClick = (option) => {
+  const handleOptionClick = (option: Option) => {
     setSelectedOption(option);
     setStatus(option);
     setIsOpen(false);
@@ -98,6 +113,6 @@ function SelectField({
       )}
     </div>
   );
-}
+};
 
 export default SelectField;

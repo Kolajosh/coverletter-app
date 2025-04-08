@@ -5,13 +5,14 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { HelmetProvider } from "react-helmet-async";
 
-function App() {
+const App: React.FC = () => {
   useEffect(() => {
     AOS.init({
       disableMutationObserver: false,
       mirror: false,
     });
   }, []);
+
   return (
     <HelmetProvider>
       <div className="App">
@@ -21,6 +22,6 @@ function App() {
       </div>
     </HelmetProvider>
   );
-}
+};
 
 export default App;
